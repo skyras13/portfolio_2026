@@ -34,10 +34,10 @@ export default function AboutPage() {
             </p>
             <p>
               Day job: <strong>Lead Developer at Dorado Software</strong>, where I&apos;m the
-              primary contributor on <strong>Cruz AI Vision</strong> — an LLM + MCP + vector-DB
-              approach to open networking. Side gig: I co-run <strong>skdaddle</strong>, the LLC
-              behind <strong>Tether</strong> and <strong>Clear Report</strong>. I also contract
-              for <strong>Ag Genius</strong> on drone imaging + AI crop insights.
+              primary contributor on an MCP-based AI tool for network and data-center
+              management. Side gig: I co-run <strong>skdaddle</strong>, the LLC behind{" "}
+              <strong>Tether</strong> and <strong>Clear Report</strong>. I also contract for{" "}
+              <strong>Ag Genius</strong> on drone imaging + AI crop insights.
             </p>
             <div className="about-stats">
               <div>

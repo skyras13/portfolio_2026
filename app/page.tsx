@@ -21,7 +21,7 @@ export default function HomePage() {
             <Link href="/projects" className="home-tile">
               <div className="tile-body">
                 <div className="tile-label">Projects</div>
-                <div className="tile-title">Tether, Clear Report, Cruz AI Vision</div>
+                <div className="tile-title">Tether, Clear Report, enterprise AI</div>
                 <div className="tile-desc">
                   SaaS products I co-own and enterprise systems I lead.
                 </div>
