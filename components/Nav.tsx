@@ -15,6 +15,7 @@ const LINKS: ReadonlyArray<[string, string]> = [
 export function Nav() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -23,10 +24,21 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   const isActive = (p: string) => (p === "/" ? pathname === "/" : pathname.startsWith(p));
 
   return (
-    <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
+    <nav className={`nav ${scrolled ? "scrolled" : ""} ${menuOpen ? "menu-open" : ""}`}>
       <div className="container nav-inner">
         <Link href="/" className="nav-brand">
           <span className="nav-logo">
@@ -47,6 +59,29 @@ export function Nav() {
         <Link href="/contact" className="nav-cta">
           contact →
         </Link>
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <span className="nav-toggle-bar"></span>
+          <span className="nav-toggle-bar"></span>
+          <span className="nav-toggle-bar"></span>
+        </button>
+      </div>
+      <div className="nav-drawer" aria-hidden={!menuOpen}>
+        <div className="container nav-drawer-inner">
+          {LINKS.map(([p, label]) => (
+            <Link key={p} href={p} className={`nav-drawer-link ${isActive(p) ? "active" : ""}`}>
+              {label}
+            </Link>
+          ))}
+          <Link href="/contact" className="nav-drawer-link cta">
+            contact →
+          </Link>
+        </div>
       </div>
     </nav>
   );

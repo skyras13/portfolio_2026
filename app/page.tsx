@@ -11,7 +11,7 @@ export default function HomePage() {
             <Link href="/work" className="home-tile">
               <div className="tile-body">
                 <div className="tile-label">Work</div>
-                <div className="tile-title">7 years, 4 industries</div>
+                <div className="tile-title">5 years, 4 industries</div>
                 <div className="tile-desc">
                   Hospitality, ed-tech, ag-tech, and networking + AI.
                 </div>

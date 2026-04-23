@@ -13,7 +13,7 @@ export default function WorkPage() {
           kicker="work history"
           title={
             <>
-              Seven years of <em>shipping</em>.
+              Five years of <em>shipping</em>.
             </>
           }
           sub="Four industries — hospitality & tourism tech, ed-tech, ag-tech, and networking + AI infrastructure. Mobile apps, full-stack, team lead, and product management along the way."

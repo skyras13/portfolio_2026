@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
+import { PhotoCarousel } from "@/components/PhotoCarousel";
 import { HATS } from "@/lib/content";
 
 export const metadata = { title: "About — Skyler Rasmussen" };
@@ -54,20 +54,7 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-          <div className="about-photo">
-            <Image
-              src="/skyler.jpg"
-              alt="Skyler Rasmussen"
-              width={900}
-              height={1200}
-              priority
-            />
-            <div className="about-photo-frame"></div>
-            <div className="about-photo-tag">
-              <span className="c"></span>
-              <span>Saratoga Springs, UT</span>
-            </div>
-          </div>
+          <PhotoCarousel />
         </div>
 
         <div className="skills">
@@ -94,9 +81,10 @@ export default function AboutPage() {
           <div className="off-clock-right">
             <p>
               Home is in Utah with my wife and two little girls. Weekends tend toward the
-              outdoors, sports, and tiring the dogs out. I like superheroes, games of all
-              kinds, and — honestly — learning anything new. That curiosity is a big part of
-              how I end up in so many different industries.
+              outdoors, sports, boating, and tiring the dogs out. The rest of my time usually
+              goes to movies, books, and chasing a new adventure. Honestly, I just like
+              learning new things — that curiosity is a big part of how I end up in so many
+              different industries.
             </p>
           </div>
         </div>

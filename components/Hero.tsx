@@ -192,7 +192,7 @@ export function Hero() {
       <div className="container hero-content">
         <div className="hero-tag">
           <span className="live-dot"></span>
-          <span>Available for select AI + infra work · Q2 2026</span>
+          <span>Available to talk AI strategy — let&apos;s level up yours</span>
         </div>
         <h1>
           Software built
