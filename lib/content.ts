@@ -24,16 +24,16 @@ export const EXPERIENCE: Experience[] = [
     company: "Ag Genius",
     type: "Contract · Ag-tech · Drone + AI",
     current: true,
-    desc: "Building app.ag-genius.com — a field-management platform that lets farmers schedule drone flyovers, process hyperspectral imagery, and surface AI-driven insights on crop health. AWS Amplify + MongoDB stack.",
-    tags: ["AWS Amplify", "MongoDB", "Hyperspectral", "Drones", "AI Insights"],
+    desc: "Building the Ag Genius platform — three connected apps (app.ag-genius.com, admin.ag-genius.com, commodities.ag-genius.com) for farmers to schedule drone flyovers, process hyperspectral imagery, and surface AI-driven crop-health insights. Modern Next.js + Supabase + Clerk + Resend + Vercel stack.",
+    tags: ["Next.js", "Supabase", "Clerk", "Resend", "Vercel", "Hyperspectral", "Drones", "AI"],
   },
   {
     date: "Jul 2023 — Oct 2025",
     role: "Full Stack Developer",
     company: "Cidi Labs",
     type: "Full-time · Remote · Ed-tech",
-    desc: "Shipped across Cidi Labs' LTI product suite for higher education. Lead developer on ObservEd (teacher observation and evaluation), main contributor on UDOIT (accessibility scanning for Canvas courses), and team contributor on ReadyGO and TidyUP. New features, stability work, and direct customer support for universities.",
-    tags: ["PHP", "Symfony", "LTI", "Canvas", "Accessibility", "Ed-tech"],
+    desc: "Shipped across Cidi Labs' LTI product suite for the Canvas LMS in higher education. Lead developer on ObservEd (Node.js backend + React frontend, teacher observation and evaluation). Main contributor on UDOIT (PHP/Symfony backend exposed via REST API to its frontend, accessibility scanning). Team contributor on ReadyGO and TidyUP (same PHP/Symfony + REST architecture, course readiness and cleanup). All four ship as LTI tools inside Canvas.",
+    tags: ["PHP", "Symfony", "Node.js", "React", "LTI", "Canvas", "REST APIs", "Accessibility", "Ed-tech"],
   },
   {
     date: "Oct 2022 — Jul 2023",
@@ -53,7 +53,7 @@ export const EXPERIENCE: Experience[] = [
   },
 ];
 
-export type FeaturedKind = "tether" | "clear" | "cruz";
+export type FeaturedKind = "tether" | "clear" | "cruz" | "ag";
 
 export type Featured = {
   kind: FeaturedKind;
@@ -104,6 +104,18 @@ export const FEATURED: Featured[] = [
     role: "Lead developer",
     link: "Dorado Software",
   },
+  {
+    kind: "ag",
+    group: "ag-genius",
+    category: "Ag-tech · Drone + AI",
+    title: "Ag Genius Platform",
+    tagline: "Drone-driven crop intelligence for farmers.",
+    desc: "Three connected apps powering the platform: app.ag-genius.com (field operations), admin.ag-genius.com (back office), and commodities.ag-genius.com (markets). Drone flyover scheduling, hyperspectral imaging, and AI-driven crop-health insights — all on a modern stack.",
+    stack: ["Next.js", "Supabase", "Clerk", "Resend", "Vercel"],
+    role: "Senior developer",
+    link: "app.ag-genius.com",
+    href: "https://app.ag-genius.com",
+  },
 ];
 
 export type Other = {
@@ -118,19 +130,10 @@ export type Other = {
 
 export const OTHER: Other[] = [
   {
-    category: "Ag-tech",
-    title: "Ag Genius Platform",
-    desc: "Drone flyover scheduling, hyperspectral imaging pipeline, and AI crop-health insights for farmers.",
-    stack: ["Amplify", "MongoDB", "Drones", "AI"],
-    role: "Senior developer",
-    link: "app.ag-genius.com",
-    href: "https://app.ag-genius.com",
-  },
-  {
     category: "Ed-tech · Cidi Labs",
     title: "ObservEd",
-    desc: "Teacher observation and evaluation, delivered as an LTI for higher ed.",
-    stack: ["Symfony", "PHP", "LTI"],
+    desc: "Teacher observation and evaluation, delivered as an LTI inside the Canvas LMS. Node.js backend with a React frontend — the outlier of the Cidi Labs suite.",
+    stack: ["Node.js", "React", "LTI", "Canvas"],
     role: "Lead developer",
     link: "cidilabs.com",
     href: "https://cidilabs.com",
@@ -138,8 +141,8 @@ export const OTHER: Other[] = [
   {
     category: "Ed-tech · Cidi Labs",
     title: "UDOIT",
-    desc: "Accessibility scanner that audits Canvas course content automatically.",
-    stack: ["Accessibility", "Canvas", "PHP"],
+    desc: "Automated accessibility scanner that audits Canvas course content. PHP/Symfony backend exposed via REST APIs to its dedicated frontend, delivered as an LTI tool in Canvas.",
+    stack: ["PHP", "Symfony", "REST", "LTI", "Canvas"],
     role: "Main contributor",
     link: "cidilabs.com",
     href: "https://cidilabs.com",
@@ -147,8 +150,8 @@ export const OTHER: Other[] = [
   {
     category: "Ed-tech · Cidi Labs",
     title: "ReadyGO & TidyUP",
-    desc: "Course readiness checks and cleanup tooling for Canvas — shipped alongside the core squads.",
-    stack: ["LTI", "PHP"],
+    desc: "Course readiness checks and cleanup tooling for Canvas. Both built on PHP/Symfony backends with REST APIs feeding their frontends; both ship as LTI integrations inside the Canvas LMS.",
+    stack: ["PHP", "Symfony", "REST", "LTI", "Canvas"],
     role: "Team contributor",
     link: "cidilabs.com",
     href: "https://cidilabs.com",

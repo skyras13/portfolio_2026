@@ -202,12 +202,11 @@ export function Hero() {
           one system at a time.
         </h1>
         <p className="hero-sub">
-          I&apos;m <strong>Skyler Rasmussen</strong> — a software developer who&apos;s shipped in{" "}
-          <strong>hospitality tech</strong>, <strong>ed-tech</strong>, <strong>ag-tech</strong>,
-          and now <strong>networking + AI infrastructure</strong>. Lead dev at{" "}
-          <strong>Dorado Software</strong> by day, co-founder of <strong>skdaddle</strong> by
-          night — a small SaaS studio behind <strong>Tether</strong> and{" "}
-          <strong>Clear Report</strong>.
+          I&apos;m <strong>Skyler Rasmussen</strong> — full-stack developer, team lead, and
+          SaaS operator. Five years of shipping across <strong>hospitality</strong>,{" "}
+          <strong>ed-tech</strong>, <strong>ag-tech</strong>, and{" "}
+          <strong>networking + AI infrastructure</strong>. Mobile apps, enterprise platforms,
+          AI systems — I build software that earns its place in production.
         </p>
         <div className="hero-ctas">
           <Link className="btn btn-primary" href="/projects">

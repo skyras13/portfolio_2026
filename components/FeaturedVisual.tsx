@@ -50,6 +50,82 @@ function CruzVis() {
   );
 }
 
+function AgVis() {
+  const cells: { x: number; y: number; o: number }[] = [];
+  const opacities = [0.18, 0.36, 0.5, 0.28, 0.22, 0.42];
+  for (let row = 0; row < 4; row++) {
+    for (let col = 0; col < 4; col++) {
+      cells.push({
+        x: 38 + col * 42,
+        y: 108 + row * 16,
+        o: opacities[(row * 4 + col) % opacities.length],
+      });
+    }
+  }
+  return (
+    <svg className="ag-vis" viewBox="0 0 240 200" fill="none" aria-hidden="true">
+      <g>
+        {cells.map((c, i) => (
+          <rect
+            key={i}
+            x={c.x}
+            y={c.y}
+            width={38}
+            height={12}
+            fill="var(--accent)"
+            opacity={c.o}
+            rx={1}
+          />
+        ))}
+      </g>
+      <line
+        x1="120"
+        y1="50"
+        x2="120"
+        y2="180"
+        stroke="var(--accent)"
+        strokeWidth="0.8"
+        strokeDasharray="2 4"
+        opacity="0.5"
+      >
+        <animate
+          attributeName="opacity"
+          values="0.2;0.6;0.2"
+          dur="2.5s"
+          repeatCount="indefinite"
+        />
+      </line>
+      <circle
+        cx="120"
+        cy="40"
+        r="20"
+        fill="none"
+        stroke="var(--accent)"
+        strokeWidth="0.8"
+        opacity="0.4"
+      >
+        <animate attributeName="r" values="18;36;18" dur="2.5s" repeatCount="indefinite" />
+        <animate
+          attributeName="opacity"
+          values="0.5;0;0.5"
+          dur="2.5s"
+          repeatCount="indefinite"
+        />
+      </circle>
+      <g transform="translate(120, 40)">
+        <circle cx="-15" cy="0" r="5" fill="var(--bg-2)" stroke="var(--accent)" strokeWidth="0.8" />
+        <circle cx="15" cy="0" r="5" fill="var(--bg-2)" stroke="var(--accent)" strokeWidth="0.8" />
+        <rect x="-12" y="-3" width="24" height="6" rx="2" fill="var(--bg-2)" stroke="var(--accent)" strokeWidth="1.1" />
+      </g>
+      <g fontFamily="JetBrains Mono" fontSize="6" fill="var(--accent)" opacity="0.7" letterSpacing="0.5">
+        <text x="38" y="190">app</text>
+        <text x="106" y="190">admin</text>
+        <text x="170" y="190">commodities</text>
+      </g>
+    </svg>
+  );
+}
+
 export function FeaturedVisual({ kind }: { kind: FeaturedKind }) {
   if (kind === "tether") {
     return (
@@ -104,9 +180,16 @@ export function FeaturedVisual({ kind }: { kind: FeaturedKind }) {
       </div>
     );
   }
+  if (kind === "cruz") {
+    return (
+      <div className="fv fv-cruz">
+        <CruzVis />
+      </div>
+    );
+  }
   return (
-    <div className="fv fv-cruz">
-      <CruzVis />
+    <div className="fv fv-ag">
+      <AgVis />
     </div>
   );
 }
